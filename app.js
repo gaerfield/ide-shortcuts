@@ -71,6 +71,19 @@ angular.module('sortApp', ['ngSanitize'])
 
         $scope.shortcutTables = [
             {
+                shortcutScope: 'Multiline Editing',
+                shortcuts: [
+                    {eclipse: '', intellij: 'Ctrl, Ctrl + Up/Down', description: 'clone caret to upper/lower position'},
+                    {eclipse: '', intellij: 'Shift + Alt + Click', description: 'add/delete caret position'},
+                    {eclipse: '', intellij: 'Shift + Alt + Middle-Mouse-Button', description: 'select column'},
+                    {eclipse: '', intellij: 'Middle-Mouse-Button + Mouse-Movement', description: 'column-selection-mode'},
+                    {eclipse: '', intellij: 'Shift + Alt + Insert', description: 'Switch between column/line-selection-mode'},
+                    {eclipse: '', intellij: 'Esc', description: 'leave multiline mode'},
+                    {eclipse: '', intellij: 'Alt + J / Alt + Shift + J', description: 'select/unselect next occurence'},
+                    {eclipse: '', intellij: 'Ctrl + Alt + Shift + J', description: 'select all occurences'},
+                ]
+            },
+            {
                 shortcutScope: 'Editing',
                 shortcuts: [
                     {
