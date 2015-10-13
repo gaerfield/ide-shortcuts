@@ -30,6 +30,7 @@ angular.module('sortApp', ['ngSanitize'])
 
     .controller('mainController', function ($scope) {
         $scope.keyPressed = '';
+        $scope.search = '';
 
         var isModifierPressed = function (event) {
             return event.ctrlKey || event.altKey || event.shiftKey;
