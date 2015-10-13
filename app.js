@@ -16,6 +16,8 @@ function preg_quote(str, delimiter) {
         .replace(new RegExp('[.\\\\+*?\\[\\^\\]$(){}=!<>|:\\' + (delimiter || '') + '-]', 'g'), '\\$&');
 }
 
+String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
+
 // app.js
 angular.module('sortApp', ['ngSanitize'])
 
