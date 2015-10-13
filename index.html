@@ -1,0 +1,64 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eclipse and IntelliJ Shortcuts</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/sandstone/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="app.css">
+    <style>
+        body { padding-top:50px; }
+    </style>
+
+    <!-- JS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.3.10/angular-sanitize.js"></script>
+    <script src="app.js"></script>
+
+</head>
+<body>
+<div class="container" ng-app="sortApp" ng-controller="mainController">
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-search" ng-hide="search"></i><i class="fa fa-times ng-cloak" ng-show="search" ng-click="search=''"></i></div>
+            <input name="searchField" autofocus type="text" class="form-control" placeholder="Text or Shortcut"
+                   ng-model="search" ng-keydown="onKeyDown($event)">
+        </div>
+    </div>
+
+    <table class="table table-bordered table-striped">
+
+        <thead>
+        <tr>
+            <td>
+                Eclipse
+            </td>
+            <td>
+                IntelliJ
+            </td>
+            <td>
+                Description
+            </td>
+        </tr>
+        </thead>
+
+        <tbody ng-repeat="table in shortcutTables">
+            <tr><td><strong>{{ table.shortcutScope }}</strong></td><td></td><td></td></tr>
+            <tr ng-repeat="shortcut in table.shortcuts | filter:search">
+                <td><span ng-bind-html="shortcut.eclipse | highlight:search"></span></td>
+                <td><span ng-bind-html="shortcut.intellij | highlight:search"></span></td>
+                <td><span ng-bind-html="shortcut.description | highlight:search"></span></td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>
+</body>
+</html>
+

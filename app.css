@@ -1,0 +1,5 @@
+/* app css stylesheet */
+
+.highlighted { background: yellow; }
+.fa-times{ cursor: pointer; }
+.ng-cloak{ display: none; }
