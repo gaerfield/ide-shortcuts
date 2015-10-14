@@ -19,7 +19,7 @@ function preg_quote(str, delimiter) {
 String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
 
 // app.js
-angular.module('sortApp', ['ngSanitize'])
+angular.module('ideShortcuts', ['ngSanitize'])
 
     .filter('highlight', function ($sce) {
         return function (text, phrase) {
