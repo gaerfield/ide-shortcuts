@@ -19,8 +19,7 @@ function preg_quote(str, delimiter) {
 String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
 
 // app.js
-angular.module('ideShortcuts', ['ngSanitize'])
-
+angular.module('ideShortcuts', ['ngSanitize','ngStorage'])
     .filter('highlight', function ($sce) {
         return function (text, phrase) {
             if (phrase && text.toLowerCase().contains(phrase))
@@ -30,7 +29,7 @@ angular.module('ideShortcuts', ['ngSanitize'])
         }
     })
 
-    .controller('mainController', function ($scope,$http) {
+    .controller('mainController', function ($scope,$http,$localStorage) {
         $scope.keyPressed = '';
         $scope.search = '';
 
@@ -66,10 +65,31 @@ angular.module('ideShortcuts', ['ngSanitize'])
             }
         };
 
-        $scope.shortcutTables = [];
-        $http.get('shortcuts.json').then(function(res){
+        const shortcutsFile = 'shortcuts.json';
+
+        // only for testing
+        $scope.reset = function() {
+            $http.get(shortcutsFile).then(function (res) {
                 $scope.shortcutTables = res.data;
+                $localStorage.tables = res.data;
             });
+        };
+
+        // only for testing
+        $scope.clear = function() {
+            $scope.shortcutTables = null;
+            delete $localStorage.tables;
+        };
+
+        $scope.shortcutTables = $localStorage.tables;
+        if($scope.shortcutTables == null)
+        {
+            $http.get(shortcutsFile).then(function (res) {
+                $scope.shortcutTables = res.data;
+                $localStorage.tables = res.data;
+            });
+        }
+
     });
 
 
