@@ -439,6 +439,11 @@
       },
       {
         "eclipse": "",
+        "intellij": "Ctrl + Shift + T",
+        "description": "Navigating between Test and Test-Subject"
+      },
+      {
+        "eclipse": "",
         "intellij": "Ctrl + Alt + Shift + N",
         "description": "Go to symbol"
       },
