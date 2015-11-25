@@ -3,3 +3,19 @@
 .highlighted { background: yellow; }
 .fa-times{ cursor: pointer; }
 .ng-cloak{ display: none; }
+
+.toc {
+    position: fixed;
+    right: 20px;
+}
+
+.container {
+    padding-right: 200px;
+    width: 100%;
+    max-width: 1500px;
+}
+
+@media (max-width: 550px) {
+    .toc {display: none; }
+    .container {padding-right: 20px; }
+}

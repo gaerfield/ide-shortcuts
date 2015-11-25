@@ -23,6 +23,11 @@
 </head>
 <body>
 <div class="container" ng-app="ideShortcuts" ng-controller="mainController">
+    <div class="toc">
+        <ul ng-repeat="table in shortcutTables">
+            <li><a href="#{{ table.shortcutScope }}">{{ table.shortcutScope }}</a></li>
+        </ul>
+    </div>
 
     <div class="form-group">
         <div class="input-group">
@@ -35,7 +40,6 @@
     <!--<button ng-click="clear()">clear</button>-->
 
     <table class="table table-bordered table-striped">
-
         <thead>
         <tr>
             <td>
@@ -51,7 +55,7 @@
         </thead>
 
         <tbody ng-repeat="table in shortcutTables">
-            <tr><td><strong>{{ table.shortcutScope }}</strong></td><td></td><td></td></tr>
+            <tr id="{{table.shortcutScope}}"><td><strong>{{ table.shortcutScope }}</strong></td><td></td><td></td></tr>
             <tr ng-repeat="shortcut in table.shortcuts | filter:search">
                 <td><span ng-bind-html="shortcut.eclipse | highlight:search"></span></td>
                 <td><span ng-bind-html="shortcut.intellij | highlight:search"></span></td>
