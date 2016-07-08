@@ -453,6 +453,11 @@
         "description": "Go to next/previous editor tab"
       },
       {
+        "eclipse": "Alt + Shift + W",
+        "intellij": "Alt + F1",
+        "description": "Show file in ... (Package Explorer, Windows Explorer, etc.)"
+      },
+      {
         "eclipse": "",
         "intellij": "F12",
         "description": "Go back to previous tool window"
