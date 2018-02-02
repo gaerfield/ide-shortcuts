@@ -33,8 +33,14 @@ angular.module('ideShortcuts', ['ngSanitize','ngStorage'])
         $scope.keyPressed = '';
         $scope.search = '';
 
+        specialKeyMap = [{38 : 'Up'}, {40 : 'Down'}];
+
         var isModifierPressed = function (event) {
             return event.ctrlKey || event.altKey || event.shiftKey;
+        };
+        var specialKeyPressed = function (keyCode) {
+            specialKey = specialKeyMap.filter((specialKey) => {return keyCode in  specialKey});
+            return (specialKey && specialKey.length > 0 ) ? specialKey[0] : null;
         };
 
         var isValidCharacterKeyCode = function(param){
@@ -59,7 +65,17 @@ angular.module('ideShortcuts', ['ngSanitize','ngStorage'])
                 $scope.search = result;
                 if(isValidCharacterKeyCode(event.keyCode))
                     $scope.search += String.fromCharCode(event.which);
-            } else {
+                else{
+                    var specialKey = specialKeyPressed(event.keyCode)
+                    if (specialKey != null){
+                        var result = result || '';
+                        result += specialKey[event.keyCode];
+                        event.preventDefault();
+                        $scope.search = result;
+                    }
+                }  
+            }
+            else {
                 if($scope.search.contains('+'))
                     $scope.search = '';
             }
