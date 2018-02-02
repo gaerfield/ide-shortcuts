@@ -33,7 +33,7 @@ angular.module('ideShortcuts', ['ngSanitize','ngStorage'])
         $scope.keyPressed = '';
         $scope.search = '';
 
-        specialKeyMap = [{38 : 'Up'}, {40 : 'Down'}];
+        specialKeyMap = [{37 : 'Left'}, {38 : 'Up'}, {39 : 'Right'}, {40 : 'Down'}];
 
         var isModifierPressed = function (event) {
             return event.ctrlKey || event.altKey || event.shiftKey;

@@ -464,8 +464,13 @@
       },
       {
         "eclipse": "Ctrl (+ Shift) + Tab",
-        "intellij": "Alt + Right/Left",
-        "description": "Go to next/previous editor tab"
+        "intellij": "Alt + Right",
+        "description": "Go to next editor tab"
+      },
+      {
+        "eclipse": "Ctrl (+ Shift) + Tab",
+        "intellij": "Alt + Left",
+        "description": "Go to previous editor tab"
       },
       {
         "eclipse": "Alt + Shift + W",
@@ -503,9 +508,14 @@
         "description": "Recent files popup"
       },
       {
-        "eclipse": "Alt + Left/Right",
-        "intellij": "Ctrl + Alt + Left/Right",
-        "description": "Navigate back/forward"
+        "eclipse": "Alt + Right",
+        "intellij": "Ctrl + Alt + Right",
+        "description": "Navigate forward"
+      },
+      {
+        "eclipse": "Alt + Left",
+        "intellij": "Ctrl + Alt + Left",
+        "description": "Navigate back"
       },
       {
         "eclipse": "",
