@@ -4,8 +4,13 @@
     "shortcuts": [
       {
         "eclipse": "",
-        "intellij": "Ctrl, Ctrl + Up/Down",
-        "description": "clone caret to upper/lower position"
+        "intellij": "Ctrl, Ctrl + Up",
+        "description": "clone caret to upper position"
+      },
+      {
+        "eclipse": "",
+        "intellij": "Ctrl, Ctrl + Down",
+        "description": "clone caret to lower position"
       },
       {
         "eclipse": "",
@@ -243,14 +248,24 @@
         "description": "Close active editor tab"
       },
       {
-        "eclipse": "Alt + Up/Down",
-        "intellij": "Ctrl + Shift + Up/Down",
-        "description": "Move line up/down"
+        "eclipse": "Alt + Up",
+        "intellij": "Ctrl + Shift + Up",
+        "description": "Move line up"
       },
       {
-        "eclipse": "Ctrl  + Up/Down",
+        "eclipse": "Alt + Down",
+        "intellij": "Ctrl + Shift + Down",
+        "description": "Move line down"
+      },
+      {
+        "eclipse": "Ctrl  + Up",
         "intellij": "",
-        "description": "Scroll Line up/down"
+        "description": "Scroll Line up"
+      },
+      {
+        "eclipse": "Ctrl  + Down",
+        "intellij": "",
+        "description": "Scroll Line down"
       }
     ]
   },
@@ -533,9 +548,14 @@
         "description": "Go to super-method/super-class"
       },
       {
-        "eclipse": "Ctrl + Shift + Up/Down",
-        "intellij": "Alt + Up/Down",
-        "description": "Go to previous/next method"
+        "eclipse": "Ctrl + Shift + Up",
+        "intellij": "Alt + Up",
+        "description": "Go to previous method"
+      },
+      {
+        "eclipse": "Ctrl + Shift + Down",
+        "intellij": "Alt + Down",
+        "description": "Go to next method"
       },
       {
         "eclipse": "Ctrl + Shift + P",
